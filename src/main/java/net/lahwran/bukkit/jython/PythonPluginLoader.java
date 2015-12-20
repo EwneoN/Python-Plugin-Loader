@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -168,12 +168,12 @@ public class PythonPluginLoader implements PluginLoader {
                     file)));
         }
 
-        List<String> depend;
+        ArrayList<String> depend;
 
         try {
-            depend = (List<String>) description.getDepend();
+            depend = (ArrayList<String>) description.getDepend();
             if (depend == null) {
-                depend = new List<String>();
+                depend = new ArrayList<String>();
             }
         } catch (ClassCastException ex) {
             throw new InvalidPluginException(ex);
